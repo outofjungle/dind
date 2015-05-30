@@ -1,0 +1,10 @@
+#! /bin/bash
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+$DIR/loopback-device-setup
+
+yum install docker -y
+service docker start
+chkconfig docker on
+
+cd /dind/centos && ./build.sh
