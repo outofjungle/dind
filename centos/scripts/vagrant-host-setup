@@ -1,10 +1,13 @@
 #! /bin/bash
 
-DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-$DIR/loopback-device-setup
-
+# Install dependencies & start docker
 yum install docker -y
 service docker start
 chkconfig docker on
 
+# Build dind image
 cd /dind/centos && ./build.sh
+
+# Ensure enough loopback devices are available
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+$DIR/loopback-device-setup
