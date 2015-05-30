@@ -1,5 +1,7 @@
 # Docker-in-Docker-in-Vagrant
 
+`dind_centos` docker image can be built on any `centos 7` host without `vagrant`. Please follow the [Quickstart](../README.md#quickstart) section instead of this README.
+
 ## Requirements
 
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
