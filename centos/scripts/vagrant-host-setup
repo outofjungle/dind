@@ -2,8 +2,8 @@
 
 # Install dependencies & start docker
 yum install docker -y
-service docker start
-chkconfig docker on
+/bin/systemctl start docker.service
+/bin/systemctl enable docker.service
 
 # Build dind image
 cd /dind/centos && ./build.sh
